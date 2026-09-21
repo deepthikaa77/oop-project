@@ -69,7 +69,12 @@ public class BankAccount {
         System.out.println("Name : "+this.name);
         System.out.print("Enter amount to be Withdrawn : ₹");
         double blnc = Double.parseDouble((scr.nextLine()));
-        this.balance = this.balance - blnc;
+        if(blnc < this.balance){
+            this.balance = this.balance - blnc;
+        }
+        else{
+            System.out.println("Invalid amount..." + balance);
+        }
         System.out.println("");
         System.out.println("Amount Debited Successfully...");
         System.out.println("");
